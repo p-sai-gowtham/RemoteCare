@@ -16,3 +16,7 @@ class UploadView(View):
             upload = Appointment(scan=request.FILES["scans"])
             upload.save()
             return HttpResponseRedirect("/")
+        
+def index(request):
+    return render(request,'home/index.html')
+

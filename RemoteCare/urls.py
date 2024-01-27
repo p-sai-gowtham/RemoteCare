@@ -8,5 +8,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("appointment.urls")),
     path("", include("users.urls")),
-    path("", views.UploadView.as_view()),
+    path("", views.index),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
