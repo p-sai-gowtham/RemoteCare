@@ -1,0 +1,60 @@
+{% load static %}
+{%block css%}
+<link rel="stylesheet" href="{% static 'css/patient_sign-signup.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+
+      <form method="post" novalidate>
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ next }}">
+        <div class="user-details">
+          <div class="input-box">
+          {{ form.username.label_tag }}
+          {{ form.username }}
+          </div>
+          <div class="input-box">
+            {% if form.license_number %}
+            {{ form.license_number.label_tag }}
+          {{ form.license_number }}
+          {% endif %}
+            {% if form.gender %}
+            {{ form.gender.label_tag }}
+          {{ form.gender }}
+          {% endif %}
+
+          </div>
+          <div class="input-box">
+            {{ form.phone_number.label_tag }}
+          {{ form.phone_number }}
+          </div>
+          <div class="input-box">
+            {{ form.date_of_birth.label_tag }}
+          {{ form.date_of_birth }}
+          </div>
+          <div class="input-box">
+            {{ form.blood_group.label_tag }}
+          {{ form.blood_group }}
+          </div>
+          <div class="input-box">
+            {{ form.password1.label_tag }}
+          {{ form.password1 }}
+          </div>
+          <div class="input-box">
+            {{ form.password2.label_tag }}
+          {{ form.password2 }}
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+  {% endblock %}
