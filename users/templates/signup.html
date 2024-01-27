@@ -16,37 +16,53 @@
           <div class="input-box">
           {{ form.username.label_tag }}
           {{ form.username }}
+          {{ form.username.errors }}
           </div>
           <div class="input-box">
-            {% if form.license_number %}
-            {{ form.license_number.label_tag }}
-          {{ form.license_number }}
-          {% endif %}
-            {% if form.gender %}
             {{ form.gender.label_tag }}
           {{ form.gender }}
-          {% endif %}
+          {{ form.gender.errors }}
 
           </div>
           <div class="input-box">
             {{ form.phone_number.label_tag }}
-          {{ form.phone_number }}
+          {{ form.phone_number }} 
+          {{ form.phone_number.errors }}
           </div>
           <div class="input-box">
-            {{ form.date_of_birth.label_tag }}
-          {{ form.date_of_birth }}
+            {{ form.age.label_tag }}
+          {{ form.age }}
+          {{ form.age.errors }}
           </div>
           <div class="input-box">
             {{ form.blood_group.label_tag }}
           {{ form.blood_group }}
+          {{ form.blood_group.errors }}
           </div>
+          {% if form.license_number %}
+          <div class="input-box">
+            {{ form.license_number.label_tag }}
+          {{ form.license_number }}
+          {{ form.license_number.errors }}
+          </div>
+          {% endif %}
+          {% if form.department %}
+          <div class="input-box">
+            {{ form.department.label_tag }}
+          {{ form.department }}
+          {{ form.department.errors }}
+          </div>
+          {% endif %}
           <div class="input-box">
             {{ form.password1.label_tag }}
           {{ form.password1 }}
+          {{ form.password1.errors }}
+
           </div>
           <div class="input-box">
             {{ form.password2.label_tag }}
           {{ form.password2 }}
+          {{ form.password2.errors }}
           </div>
         </div>
         <div class="button">

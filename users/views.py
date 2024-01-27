@@ -48,7 +48,6 @@ def login_view(request):
                 return redirect("/")
             else:
                 return redirect("/")
-            # return redirect('users:home')
     else:
         form = AuthenticationForm()
     return render(request, "signup.html", {"form": form})
